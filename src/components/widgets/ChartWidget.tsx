@@ -1,4 +1,3 @@
-'use client'
 import { useEffect, useState } from 'react'
 import { LineChart, Line, XAxis, YAxis, Tooltip, ResponsiveContainer, Area, AreaChart } from 'recharts'
 import { WidgetShell } from '../WidgetShell'

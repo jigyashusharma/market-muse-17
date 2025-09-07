@@ -1,4 +1,3 @@
-'use client'
 import { useEffect, useState } from 'react'
 import { WidgetShell } from '../WidgetShell'
 import { WidgetConfig } from '@/store/dashboard'

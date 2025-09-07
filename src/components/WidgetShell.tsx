@@ -5,29 +5,25 @@ interface WidgetShellProps {
   title: string
   toolbar?: ReactNode
   children: ReactNode
-  className?: string
 }
 
-export function WidgetShell({ title, toolbar, children, className }: WidgetShellProps) {
+export function WidgetShell({ title, toolbar, children }: WidgetShellProps) {
   return (
-    <div
-      className={cn(
-        "rounded-xl border border-border bg-card/80 backdrop-blur-sm shadow-widget",
-        "hover:shadow-glow transition-all duration-300",
-        "h-full flex flex-col overflow-hidden",
-        className
-      )}
-    >
-      <div className="flex items-center justify-between p-4 border-b border-border/50">
-        <h3 className="font-semibold text-card-foreground truncate flex items-center gap-2">
-          <div className="w-2 h-2 bg-primary rounded-full animate-pulse" />
+    <div className={cn(
+      "rounded-xl border border-border bg-card backdrop-blur-sm p-4 h-full",
+      "flex flex-col shadow-sm hover:shadow-md transition-shadow duration-200"
+    )}>
+      <div className="flex items-center justify-between mb-3 min-h-[24px]">
+        <h3 className="font-semibold text-card-foreground truncate pr-2">
           {title}
         </h3>
-        <div className="flex items-center gap-2 text-muted-foreground">
-          {toolbar}
-        </div>
+        {toolbar && (
+          <div className="flex items-center gap-2 flex-shrink-0">
+            {toolbar}
+          </div>
+        )}
       </div>
-      <div className="flex-1 p-4 min-h-0 overflow-hidden">
+      <div className="min-h-0 flex-1 overflow-hidden">
         {children}
       </div>
     </div>

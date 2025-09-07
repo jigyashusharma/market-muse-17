@@ -1,4 +1,3 @@
-'use client'
 import DashboardGrid from '@/components/DashboardGrid'
 import { AddWidgetDialog } from '@/components/AddWidgetDialog'
 import { SettingsDialog } from '@/components/SettingsDialog'
