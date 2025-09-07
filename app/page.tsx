@@ -1,18 +1,18 @@
 'use client'
-import DashboardGrid from '@/components/DashboardGrid'
-import { AddWidgetDialog } from '@/components/AddWidgetDialog'
-import { SettingsDialog } from '@/components/SettingsDialog'
-import { useDash } from '@/store/dashboard'
-import { Button } from '@/components/ui/button'
+import DashboardGrid from './components/DashboardGrid'
+import { AddWidgetDialog } from './components/AddWidgetDialog'
+import { SettingsDialog } from './components/SettingsDialog'
+import { useDash } from './store/dashboard'
+import { Button } from './components/ui/button'
 import {
   DropdownMenu,
   DropdownMenuContent,
   DropdownMenuItem,
   DropdownMenuTrigger,
-} from '@/components/ui/dropdown-menu'
-import { useToast } from '@/hooks/use-toast'
+} from './components/ui/dropdown-menu'
+import { useToast } from './hooks/use-toast'
 
-const Index = () => {
+export default function HomePage() {
   const { widgets, exportJSON, importJSON, reset } = useDash()
   const { toast } = useToast()
 
@@ -119,5 +119,3 @@ const Index = () => {
     </div>
   )
 }
-
-export default Index
