@@ -47,6 +47,26 @@ export default {
           DEFAULT: "hsl(var(--card))",
           foreground: "hsl(var(--card-foreground))",
         },
+        // Finance dashboard specific colors
+        dashboard: {
+          bg: "hsl(var(--dashboard-bg))",
+          card: "hsl(var(--dashboard-card))",
+          "card-hover": "hsl(var(--dashboard-card-hover))",
+          border: "hsl(var(--dashboard-border))",
+        },
+        finance: {
+          primary: "hsl(var(--finance-primary))",
+          "primary-foreground": "hsl(var(--finance-primary-foreground))",
+          success: "hsl(var(--finance-success))",
+          danger: "hsl(var(--finance-danger))",
+          warning: "hsl(var(--finance-warning))",
+        },
+        chart: {
+          primary: "hsl(var(--chart-primary))",
+          secondary: "hsl(var(--chart-secondary))",
+          tertiary: "hsl(var(--chart-tertiary))",
+          grid: "hsl(var(--chart-grid))",
+        },
         sidebar: {
           DEFAULT: "hsl(var(--sidebar-background))",
           foreground: "hsl(var(--sidebar-foreground))",
@@ -57,6 +77,19 @@ export default {
           border: "hsl(var(--sidebar-border))",
           ring: "hsl(var(--sidebar-ring))",
         },
+      },
+      backgroundImage: {
+        'gradient-primary': 'var(--gradient-primary)',
+        'gradient-card': 'var(--gradient-card)',
+        'gradient-success': 'var(--gradient-success)',
+      },
+      boxShadow: {
+        'widget': 'var(--shadow-widget)',
+        'card': 'var(--shadow-card)',
+        'glow': 'var(--shadow-glow)',
+      },
+      transitionTimingFunction: {
+        'smooth': 'cubic-bezier(0.4, 0, 0.2, 1)',
       },
       borderRadius: {
         lg: "var(--radius)",

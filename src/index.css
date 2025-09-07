@@ -2,95 +2,89 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
-All colors MUST be HSL.
-*/
+/* FinBoard Design System - Professional Finance Dashboard Theme */
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
-
+    /* Base colors for light mode */
+    --background: 210 20% 98%;
+    --foreground: 222 47% 11%;
+    
+    /* Finance dashboard specific colors */
+    --dashboard-bg: 218 25% 8%;
+    --dashboard-card: 218 20% 12%;
+    --dashboard-card-hover: 218 20% 16%;
+    --dashboard-border: 218 15% 20%;
+    
+    /* Brand colors */
+    --finance-primary: 158 64% 52%;
+    --finance-primary-foreground: 210 40% 98%;
+    --finance-success: 120 60% 50%;
+    --finance-danger: 0 72% 51%;
+    --finance-warning: 45 93% 58%;
+    
+    /* Semantic UI colors */
     --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
-
+    --card-foreground: 222 47% 11%;
     --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
-
-    --primary: 222.2 47.4% 11.2%;
+    --popover-foreground: 222 47% 11%;
+    --primary: 158 64% 52%;
     --primary-foreground: 210 40% 98%;
-
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
-
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
-
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
-
-    --destructive: 0 84.2% 60.2%;
+    --secondary: 210 40% 96%;
+    --secondary-foreground: 222 47% 11%;
+    --muted: 210 40% 96%;
+    --muted-foreground: 215 16% 47%;
+    --accent: 210 40% 96%;
+    --accent-foreground: 222 47% 11%;
+    --destructive: 0 72% 51%;
     --destructive-foreground: 210 40% 98%;
-
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
-
-    --radius: 0.5rem;
-
-    --sidebar-background: 0 0% 98%;
-
-    --sidebar-foreground: 240 5.3% 26.1%;
-
-    --sidebar-primary: 240 5.9% 10%;
-
-    --sidebar-primary-foreground: 0 0% 98%;
-
-    --sidebar-accent: 240 4.8% 95.9%;
-
-    --sidebar-accent-foreground: 240 5.9% 10%;
-
-    --sidebar-border: 220 13% 91%;
-
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    --border: 214 32% 91%;
+    --input: 214 32% 91%;
+    --ring: 158 64% 52%;
+    --radius: 0.75rem;
+    
+    /* Chart colors */
+    --chart-primary: 158 64% 52%;
+    --chart-secondary: 210 100% 70%;
+    --chart-tertiary: 45 93% 58%;
+    --chart-grid: 218 15% 25%;
+    
+    /* Gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(158 64% 52%), hsl(158 64% 42%));
+    --gradient-card: linear-gradient(145deg, hsl(218 20% 12%), hsl(218 20% 10%));
+    --gradient-success: linear-gradient(135deg, hsl(120 60% 50%), hsl(120 60% 40%));
+    
+    /* Shadows */
+    --shadow-widget: 0 4px 20px -4px hsl(218 25% 8% / 0.3);
+    --shadow-card: 0 2px 8px hsl(218 25% 8% / 0.1);
+    --shadow-glow: 0 0 20px hsl(158 64% 52% / 0.3);
+    
+    /* Animations */
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-fast: all 0.15s ease-out;
   }
 
   .dark {
-    --background: 222.2 84% 4.9%;
+    /* Dark mode - primary theme for finance dashboard */
+    --background: 218 25% 8%;
     --foreground: 210 40% 98%;
-
-    --card: 222.2 84% 4.9%;
+    --card: 218 20% 12%;
     --card-foreground: 210 40% 98%;
-
-    --popover: 222.2 84% 4.9%;
+    --popover: 218 20% 12%;
     --popover-foreground: 210 40% 98%;
-
-    --primary: 210 40% 98%;
-    --primary-foreground: 222.2 47.4% 11.2%;
-
-    --secondary: 217.2 32.6% 17.5%;
+    --primary: 158 64% 52%;
+    --primary-foreground: 210 40% 98%;
+    --secondary: 218 15% 20%;
     --secondary-foreground: 210 40% 98%;
-
-    --muted: 217.2 32.6% 17.5%;
-    --muted-foreground: 215 20.2% 65.1%;
-
-    --accent: 217.2 32.6% 17.5%;
+    --muted: 218 15% 20%;
+    --muted-foreground: 215 20% 65%;
+    --accent: 218 15% 20%;
     --accent-foreground: 210 40% 98%;
-
-    --destructive: 0 62.8% 30.6%;
+    --destructive: 0 72% 51%;
     --destructive-foreground: 210 40% 98%;
-
-    --border: 217.2 32.6% 17.5%;
-    --input: 217.2 32.6% 17.5%;
-    --ring: 212.7 26.8% 83.9%;
-    --sidebar-background: 240 5.9% 10%;
-    --sidebar-foreground: 240 4.8% 95.9%;
-    --sidebar-primary: 224.3 76.3% 48%;
-    --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 240 3.7% 15.9%;
-    --sidebar-accent-foreground: 240 4.8% 95.9%;
-    --sidebar-border: 240 3.7% 15.9%;
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    --border: 218 15% 20%;
+    --input: 218 15% 20%;
+    --ring: 158 64% 52%;
   }
 }
 
@@ -100,6 +94,92 @@ All colors MUST be HSL.
   }
 
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground antialiased;
+    font-feature-settings: 'rlig' 1, 'calt' 1;
   }
+
+  /* Default to dark theme for finance dashboard */
+  html {
+    @apply dark;
+  }
+}
+
+/* React Grid Layout Styles - Enhanced for dark theme */
+.react-grid-layout {
+  position: relative;
+}
+
+.react-grid-item {
+  transition: var(--transition-smooth);
+  border-radius: var(--radius);
+}
+
+.react-grid-item.cssTransforms {
+  transition-property: transform, width, height;
+}
+
+.react-grid-item > .react-resizable-handle {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  bottom: 0;
+  right: 0;
+  background: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNiIgaGVpZ2h0PSI2IiB2aWV3Qm94PSIwIDAgNiA2IiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPjxnIGZpbGw9IiM5OTkiIGZpbGwtcnVsZT0iZXZlbm9kZCI+PHBhdGggZD0ibTUgNWgtNHYtNGgtMXY1aDV6Ii8+PC9nPjwvc3ZnPg==');
+  background-position: bottom right;
+  padding: 0 3px 3px 0;
+  background-repeat: no-repeat;
+  background-origin: content-box;
+  cursor: se-resize;
+  opacity: 0.4;
+  transition: opacity 0.2s;
+}
+
+.react-grid-item:hover > .react-resizable-handle {
+  opacity: 0.8;
+}
+
+.react-grid-item.react-grid-placeholder {
+  background: hsl(var(--primary) / 0.2);
+  opacity: 0.6;
+  border: 2px dashed hsl(var(--primary));
+  border-radius: var(--radius);
+  transition-duration: 100ms;
+}
+
+.react-grid-item > .react-resizable-handle::after {
+  border-color: hsl(var(--muted-foreground)) transparent transparent;
+}
+
+/* Drag handle styling */
+.drag-handle {
+  cursor: grab;
+  transition: var(--transition-fast);
+}
+
+.drag-handle:hover {
+  color: hsl(var(--primary));
+}
+
+.drag-handle:active {
+  cursor: grabbing;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: hsl(var(--muted));
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: hsl(var(--muted-foreground) / 0.5);
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: hsl(var(--muted-foreground) / 0.7);
 }
